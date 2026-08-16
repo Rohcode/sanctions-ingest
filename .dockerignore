@@ -1,0 +1,5 @@
+target/
+.git/
+*.md
+.github/
+# keep Cargo.lock, src/, tests/, testdata/ — needed for --locked build + parity test

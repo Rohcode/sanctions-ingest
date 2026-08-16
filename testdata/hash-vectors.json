@@ -1,0 +1,136 @@
+{
+  "genesisHash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "stable": [
+    {
+      "input": null,
+      "out": "null"
+    },
+    {
+      "input": 42,
+      "out": "42"
+    },
+    {
+      "input": -7,
+      "out": "-7"
+    },
+    {
+      "input": "hello",
+      "out": "\"hello\""
+    },
+    {
+      "input": "quote \" and \\ backslash",
+      "out": "\"quote \\\" and \\\\ backslash\""
+    },
+    {
+      "input": true,
+      "out": "true"
+    },
+    {
+      "input": false,
+      "out": "false"
+    },
+    {
+      "input": [
+        "b",
+        "a",
+        "c"
+      ],
+      "out": "[\"b\",\"a\",\"c\"]"
+    },
+    {
+      "input": {
+        "b": 1,
+        "a": 2,
+        "c": 3
+      },
+      "out": "{\"a\":2,\"b\":1,\"c\":3}"
+    },
+    {
+      "input": {
+        "z": {
+          "y": [
+            3,
+            2,
+            1
+          ],
+          "x": "k"
+        },
+        "a": null
+      },
+      "out": "{\"a\":null,\"z\":{\"x\":\"k\",\"y\":[3,2,1]}}"
+    },
+    {
+      "input": "unicode: Müller 金正恩 ١٢٣",
+      "out": "\"unicode: Müller 金正恩 ١٢٣\""
+    }
+  ],
+  "payloadHash": [
+    {
+      "payload": {},
+      "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "payload": {
+        "sourceSha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "added": 10,
+        "updated": 2,
+        "deactivated": 1,
+        "unchanged": 3820,
+        "skipped": false,
+        "rowCount": 11042,
+        "personCount": 3835
+      },
+      "hash": "b66db5ed78c63d144f1a56853c4501fa486bc72d0ca2935567b43ff987a4fdab"
+    },
+    {
+      "payload": {
+        "sourceSha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "added": 0,
+        "updated": 0,
+        "deactivated": 0,
+        "unchanged": 0,
+        "skipped": true,
+        "rowCount": 0,
+        "personCount": 0
+      },
+      "hash": "379c4afe7f364e50a6f5d024fea54fa8f473e848f1c72b10f85179c6be6bf202"
+    }
+  ],
+  "eventHash": [
+    {
+      "material": {
+        "seq": 0,
+        "chainId": "sanctions-ingest-dfat",
+        "eventType": "SANCTIONS_INGEST",
+        "action": "CREATE",
+        "objectType": "ListVersion",
+        "objectId": "v-0001",
+        "entityId": null,
+        "actorAccountId": null,
+        "citations": [
+          "Act s.28(2)(e)(ii)",
+          "Rules s.5-3"
+        ],
+        "payloadHash": "b66db5ed78c63d144f1a56853c4501fa486bc72d0ca2935567b43ff987a4fdab",
+        "prevHash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "hash": "9b9bc5a49203662357d7865428b4072bdd32059fea7652708519567c3e8a3ca4"
+    },
+    {
+      "material": {
+        "seq": 1,
+        "chainId": "sanctions-ingest-dfat",
+        "eventType": "SANCTIONS_INGEST",
+        "action": "SKIP",
+        "objectType": "ListVersion",
+        "objectId": null,
+        "entityId": null,
+        "actorAccountId": "acct-123",
+        "citations": [],
+        "payloadHash": "379c4afe7f364e50a6f5d024fea54fa8f473e848f1c72b10f85179c6be6bf202",
+        "prevHash": "9b9bc5a49203662357d7865428b4072bdd32059fea7652708519567c3e8a3ca4"
+      },
+      "hash": "f4ed46a6b06c6979e81d2e80ff58898966770717dc71016aa7dab77a049d2949"
+    }
+  ]
+}

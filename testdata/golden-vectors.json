@@ -1,0 +1,245 @@
+[
+  {
+    "input": "John Smith",
+    "norm": "john smith",
+    "phonetic": [
+      "J500",
+      "S530"
+    ]
+  },
+  {
+    "input": "JOHN   SMITH",
+    "norm": "john smith",
+    "phonetic": [
+      "J500",
+      "S530"
+    ]
+  },
+  {
+    "input": "  John  Smith  ",
+    "norm": "john smith",
+    "phonetic": [
+      "J500",
+      "S530"
+    ]
+  },
+  {
+    "input": "Müller",
+    "norm": "muller",
+    "phonetic": [
+      "M460"
+    ]
+  },
+  {
+    "input": "Ünsal",
+    "norm": "unsal",
+    "phonetic": [
+      "U524"
+    ]
+  },
+  {
+    "input": "Yevgeny Viktorovich Prigozhin",
+    "norm": "yevgeny viktorovich prigozhin",
+    "phonetic": [
+      "Y125",
+      "V236",
+      "P622"
+    ]
+  },
+  {
+    "input": "José Núñez",
+    "norm": "jose nunez",
+    "phonetic": [
+      "J200",
+      "N520"
+    ]
+  },
+  {
+    "input": "Łukasz Wałęsa",
+    "norm": "łukasz wałesa",
+    "phonetic": [
+      "U220",
+      "W200"
+    ]
+  },
+  {
+    "input": "Al-Bashir",
+    "norm": "al bashir",
+    "phonetic": [
+      "A400",
+      "B260"
+    ]
+  },
+  {
+    "input": "O'Brien",
+    "norm": "o brien",
+    "phonetic": [
+      "B650"
+    ]
+  },
+  {
+    "input": "Kim Jong-un",
+    "norm": "kim jong un",
+    "phonetic": [
+      "K500",
+      "J520",
+      "U500"
+    ]
+  },
+  {
+    "input": "IBN UMAR AL-MASRI",
+    "norm": "ibn umar al masri",
+    "phonetic": [
+      "I150",
+      "U560",
+      "A400",
+      "M260"
+    ]
+  },
+  {
+    "input": "Bin Laden, Osama",
+    "norm": "bin laden osama",
+    "phonetic": [
+      "B500",
+      "L350",
+      "O250"
+    ]
+  },
+  {
+    "input": "A.B.C. Holdings (Pty) Ltd.",
+    "norm": "a b c holdings pty ltd",
+    "phonetic": [
+      "H435",
+      "P300",
+      "L300"
+    ]
+  },
+  {
+    "input": "Mohammed Al-Rashid",
+    "norm": "mohammed al rashid",
+    "phonetic": [
+      "M530",
+      "A400",
+      "R230"
+    ]
+  },
+  {
+    "input": "Muhammad",
+    "norm": "muhammad",
+    "phonetic": [
+      "M530"
+    ]
+  },
+  {
+    "input": "Straße",
+    "norm": "straße",
+    "phonetic": [
+      "S362"
+    ]
+  },
+  {
+    "input": "STRASSE",
+    "norm": "strasse",
+    "phonetic": [
+      "S362"
+    ]
+  },
+  {
+    "input": "ẞẞ",
+    "norm": "ßß",
+    "phonetic": [
+      "S000"
+    ]
+  },
+  {
+    "input": "İstanbul",
+    "norm": "istanbul",
+    "phonetic": [
+      "I235"
+    ]
+  },
+  {
+    "input": "ΟΔΥΣΣΕΥΣ",
+    "norm": "οδυσσευς",
+    "phonetic": [
+      ""
+    ]
+  },
+  {
+    "input": "Пригожин",
+    "norm": "пригожин",
+    "phonetic": [
+      ""
+    ]
+  },
+  {
+    "input": "أُسامة بن لادن",
+    "norm": "ا سامة بن لادن",
+    "phonetic": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "input": "金正恩",
+    "norm": "金正恩",
+    "phonetic": [
+      ""
+    ]
+  },
+  {
+    "input": "Unit 1000 ٠١٢",
+    "norm": "unit 1000 ٠١٢",
+    "phonetic": [
+      "U530",
+      "",
+      ""
+    ]
+  },
+  {
+    "input": "1000a",
+    "norm": "1000a",
+    "phonetic": [
+      "A000"
+    ]
+  },
+  {
+    "input": "",
+    "norm": "",
+    "phonetic": []
+  },
+  {
+    "input": "   ",
+    "norm": "",
+    "phonetic": []
+  },
+  {
+    "input": "...---...",
+    "norm": "",
+    "phonetic": []
+  },
+  {
+    "input": "A Smith",
+    "norm": "a smith",
+    "phonetic": [
+      "S530"
+    ]
+  },
+  {
+    "input": "Al Smith",
+    "norm": "al smith",
+    "phonetic": [
+      "A400",
+      "S530"
+    ]
+  },
+  {
+    "input": "John Jon",
+    "norm": "john jon",
+    "phonetic": [
+      "J500",
+      "J500"
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-test-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        run: rustup toolchain install stable --profile minimal
+
+      # Cache the registry, git deps, and build output across runs.
+      - uses: Swatinem/rust-cache@v2
+
+      # Fetch cargo-audit / cargo-cyclonedx as prebuilt binaries instead of
+      # compiling them from source on every run.
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-audit,cargo-cyclonedx
+
+      # Build EXACTLY the committed lockfile — fail on any dependency drift.
+      - name: Build (locked)
+        run: cargo build --release --locked
+
+      # Golden-vector parity (Rust name-math == server normalize.ts) + unit tests.
+      - name: Test
+        run: cargo test --locked
+
+      # Advisories are published on RustSec's schedule, not this repo's. Report
+      # them, but don't let a new upstream advisory retroactively fail a build
+      # that was green when it shipped.
+      - name: cargo-audit (advisory DB)
+        continue-on-error: true
+        run: cargo audit
+
+      - name: SBOM (CycloneDX)
+        run: cargo cyclonedx --format json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: '**/*.cdx.json'
+
+      # Refuse to ship a Dockerfile whose base images are not digest-pinned:
+      # every FROM must carry an explicit @sha256:<64 hex>, so a rebuild fetches
+      # the exact bytes that were reviewed.
+      - name: Enforce digest-pinned base images
+        run: |
+          unpinned=$(grep -E '^\s*FROM\s' Dockerfile | grep -vE '@sha256:[0-9a-f]{64}' || true)
+          if [ -n "$unpinned" ]; then
+            echo "::error::Unpinned base image(s) in Dockerfile:"
+            echo "$unpinned"
+            exit 1
+          fi
+          echo "All base images digest-pinned."

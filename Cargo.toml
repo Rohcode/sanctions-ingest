@@ -1,0 +1,32 @@
+[package]
+name = "sanctions-ingest"
+version = "0.1.0"
+edition = "2021"
+description = "Hardened one-shot DFAT Consolidated List parser (Rust + calamine). Server stays query-only; this is the only list-WRITE surface."
+publish = false
+
+[lib]
+name = "sanctions_ingest"
+path = "src/lib.rs"
+
+[[bin]]
+name = "sanctions-ingest"
+path = "src/main.rs"
+
+[dependencies]
+calamine = { version = "0.26", features = ["dates"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+unicode-normalization = "0.1"
+unicode-general-category = "0.6"
+# Neo4j (Bolt) + R2 (S3) writer. The container talks ONLY to Neo4j and R2.
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+neo4rs = "0.8"
+uuid = { version = "1", features = ["v4"] }
+aws-config = { version = "1", features = ["behavior-version-latest"] }
+aws-sdk-s3 = "1"
+
+[profile.release]
+strip = true
+lto = true
